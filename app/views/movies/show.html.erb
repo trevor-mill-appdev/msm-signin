@@ -18,6 +18,14 @@
       </div>
     </div>
 
+    <hr>
+
+      <form action="/insert_bookmark" method="post">
+        <input name="query_movie_id" type="hidden" value="<%= @the_movie.id %>">
+        <input name="query_user_id" type="hidden" value="<%= session.fetch(:user_id) %>">
+        <button>Bookmark this movie!</button>
+      </form>
+
     <dl>
       <dt>
         Title
