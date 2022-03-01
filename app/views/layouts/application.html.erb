@@ -15,17 +15,19 @@
   </head>
 
   <body>
-    <ul>
+  <!-- Navigation: only show sign up/sign in if no logged in user; else show sign out -->
+    <% if session[:user_id] == nil %>
       <li>
-        <a href="/">Home</a>
+        <a href="/user_sign_up">
+          Sign up
+        </a>
       </li>
       <li>
-        <a href="/actors">Actors</a>
+        <a href="/user_sign_in">
+          Sign in
+        </a>
       </li>
-      <li>
-        <a href="/directors">Directors</a>
-      </li>
-    </ul>
+
     <%= yield %>
   </body>
 </html>
