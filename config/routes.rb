@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # Home page
+
+  get("/", { :controller => "application", :action => "render_home"})
+
   # Routes for the Bookmark resource:
 
   get("/add_bookmark", { :controller => "bookmarks", :action => "create_from_movie"})
