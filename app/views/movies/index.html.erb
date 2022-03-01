@@ -44,7 +44,13 @@
           Director
         </label>
 
-        <input type="text" id="director_id_box" name="query_director_id">
+        <select name="query_director_id" id="director_id_box">
+          <% Director.order(:name).each do |a_director| %>
+            <option value="<%= a_director.id %>">
+              <%= a_director.name %>
+            </option>
+          <% end %>
+        </select>
       </div>
 
       <div>
@@ -134,7 +140,7 @@
         </td>
 
         <td>
-          <%= a_movie.director_id %>
+          <%= a_movie.director.name %>
         </td>
 
         <td>
